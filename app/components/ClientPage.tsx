@@ -84,7 +84,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                         <StyledBold>OAuth</StyledBold>
                         <p>You have not signed in.</p>
 
-                        <StyledButton onClick={()=>signIn("github",{callbackUrl: "/",prompt: "consent",})}>Sign in with Github</StyledButton>
+                        <StyledButton onClick={()=>signIn("github",{prompt: "consent",})}>Sign in with Github</StyledButton>
                     </div>
                 )
                 }
