@@ -57,11 +57,12 @@ const Avatar = styled.img`
 
 
 export default function ClientPage({session}: {session: Session|null}) {
+    /**
     useEffect(() => {
         if (session?.user){
             signOut({redirect: false});
         }
-    },[])
+    },[])**/
     return (
         <>
             <Title />
