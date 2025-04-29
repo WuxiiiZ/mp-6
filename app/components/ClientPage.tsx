@@ -1,10 +1,10 @@
 "use client"
 import {signIn} from "next-auth/react";
-//import {signOut} from "next-auth/react";
+import {signOut} from "next-auth/react";
 import {Session} from "next-auth";
 import styled from "styled-components";
 import Title from "./Title";
-//import {useEffect} from "react";
+import {useEffect} from "react";
 
 
 const Container = styled.div`
@@ -59,12 +59,12 @@ const Avatar = styled.img`
 
 
 export default function ClientPage({session}: {session: Session|null}) {
-    /**
+
     useEffect(() => {
         if (session?.user){
             signOut({redirect: false});
         }
-    },[])**/
+    },[session])
     return (
         <>
             <Title />
@@ -84,7 +84,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                         <StyledBold>OAuth</StyledBold>
                         <p>You have not signed in.</p>
 
-                        <StyledButton onClick={()=>signIn("github",{callbackUrl: "/",prompt:"login"})}>Sign in with Github</StyledButton>
+                        <StyledButton onClick={()=>signIn("github",{callbackUrl: "/"})}>Sign in with Github</StyledButton>
                     </div>
                 )
                 }
