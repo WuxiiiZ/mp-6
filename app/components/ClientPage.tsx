@@ -65,6 +65,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                 {session?.user ?(
                     <div>
                         <b>Success! </b>
+                    <br/>
                         <Avatar src={session.user.image || ""} alt="GitHub Avatar" />
                         <p>Hi, user <StyledSpan>{session.user.name}</StyledSpan></p>
                         <p>Email: <StyledSpan>{session.user.email}</StyledSpan></p>
@@ -75,7 +76,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                         <StyledBold>OAuth</StyledBold>
                         <p>You have not signed in.</p>
 
-                        <StyledButton onClick={()=>signIn("github")}>Sign in with Github</StyledButton>
+                        <StyledButton onClick={()=>signIn("github",{callbackUrl: "/"})}>Sign in with Github</StyledButton>
                     </div>
                 )
                 }

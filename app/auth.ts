@@ -1,10 +1,6 @@
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 
-console.log("GITHUB_CLIENT_ID:", process.env.GITHUB_CLIENT_ID);
-console.log("GITHUB_CLIENT_SECRET:", process.env.GITHUB_CLIENT_SECRET);
-console.log("NEXTAUTH_SECRET:", process.env.NEXTAUTH_SECRET);
-
 export const {handlers, auth} =NextAuth(
     {
         providers:[
