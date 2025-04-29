@@ -59,7 +59,6 @@ const Avatar = styled.img`
 
 export default function ClientPage({session}: {session: Session|null}) {
 
-
     return (
         <>
             <Title />

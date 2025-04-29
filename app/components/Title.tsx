@@ -5,7 +5,6 @@ const StyledTitle = styled.div`
     margin: 3vh 0;
     font-weight: bold;
     font-size: calc(2px + 2vw);
-    background: white;
 `
 
 export default function Title() {
