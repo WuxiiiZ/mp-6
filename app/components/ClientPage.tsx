@@ -24,11 +24,16 @@ const StyledDiv = styled.div`
     }
 `
 
+const StyledBold = styled.b`
+    padding: 1vh;
+`;
+
 const StyledButton = styled.button`
-    border-radius: 2px;
+    border-radius: 2vh;
     padding: 2vh;
     background: darkkhaki;
     color:white;
+    border: none;
     &:hover{
         background: goldenrod;
     }
@@ -49,7 +54,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                     </div>
                 ):(
                     <div>
-                        <b>OAuth</b>
+                        <StyledBold>OAuth</StyledBold>
                         <p>You have not signed in.</p>
                         <StyledButton onClick={()=>signIn("github")}>Sign in with Github</StyledButton>
                     </div>
