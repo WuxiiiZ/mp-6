@@ -25,15 +25,17 @@ const StyledDiv = styled.div`
 `
 
 const StyledBold = styled.b`
-    padding: 1vh;
+    padding: 2vh;
+    color:black;
 `;
 
 const StyledButton = styled.button`
     border-radius: 2vh;
-    padding: 2vh;
+    padding: 3vh;
     background: darkkhaki;
     color:white;
     border: none;
+    font-size: medium;
     &:hover{
         background: goldenrod;
     }
