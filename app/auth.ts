@@ -12,7 +12,7 @@ export const {handlers, auth} =NextAuth(
         ],
         session:{
             strategy: 'jwt',
-            maxAge:5, // session will expire in 5 seconds
+            maxAge:1, // session will expire in 5 seconds
         }
     }
 )
