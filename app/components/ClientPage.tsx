@@ -1,8 +1,9 @@
 "use client"
-import {signIn} from "next-auth/react";
+import {signIn,signOut} from "next-auth/react";
 import {Session} from "next-auth";
 import styled from "styled-components";
 import Title from "./Title";
+import {useEffect} from "react";
 
 const Container = styled.div`
     display: flex;
@@ -56,7 +57,11 @@ const Avatar = styled.img`
 
 
 export default function ClientPage({session}: {session: Session|null}) {
-
+    useEffect(() => {
+        if (session?.user){
+            signOut({redirect: false});
+        }
+    },[])
     return (
         <>
             <Title />
@@ -81,7 +86,6 @@ export default function ClientPage({session}: {session: Session|null}) {
                 )
                 }
                 </StyledDiv>
-
             </Container>
         </>
 
