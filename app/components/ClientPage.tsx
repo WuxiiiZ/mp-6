@@ -48,6 +48,9 @@ const StyledButton = styled.button`
 `;
 
 export default function ClientPage({session}: {session: Session|null}) {
+    const handleSignIn = () => {
+        signIn("github",{prompt:"login"})
+    }
     return (
         <>
             <Title />
@@ -65,7 +68,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                         <StyledBold>OAuth</StyledBold>
                         <p>You have not signed in.</p>
                         {/* always ask the user to re-authenticate */}
-                        <StyledButton onClick={()=>signIn("github",{prompt:"login"})}>Sign in with Github</StyledButton>
+                        <StyledButton onClick={handleSignIn}>Sign in with Github</StyledButton>
                     </div>
                 )
                 }
