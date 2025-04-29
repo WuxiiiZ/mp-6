@@ -8,6 +8,7 @@ export default async function Page() {
     session.user = {
       name: session.user.name,
       email: session.user.email,
+      image: session.user.image,
     }
   }
   console.log(session)

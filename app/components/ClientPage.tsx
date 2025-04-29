@@ -1,9 +1,8 @@
 "use client"
-import {signIn,signOut} from "next-auth/react";
+import {signIn} from "next-auth/react";
 import {Session} from "next-auth";
 import styled from "styled-components";
 import Title from "./Title";
-import {useEffect} from "react";
 
 const Container = styled.div`
     display: flex;
@@ -48,6 +47,14 @@ const StyledButton = styled.button`
     }
 `;
 
+const Avatar = styled.img`
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1vh;
+`;
+
+
 export default function ClientPage({session}: {session: Session|null}) {
 
     return (
@@ -58,6 +65,7 @@ export default function ClientPage({session}: {session: Session|null}) {
                 {session?.user ?(
                     <div>
                         <b>Success! </b>
+                        <Avatar src={session.user.image || ""} alt="GitHub Avatar" />
                         <p>Hi, user <StyledSpan>{session.user.name}</StyledSpan></p>
                         <p>Email: <StyledSpan>{session.user.email}</StyledSpan></p>
                         <p>You have signed in with Github.</p>
