@@ -18,11 +18,11 @@ export const {handlers, auth} =NextAuth(
             strategy: 'jwt',
             maxAge:1, // session will expire in 5 seconds
         },
-        callbacks:{
+        /**callbacks:{
             async jwt({token}) {
                 token.exp = Math.floor(Date.now() / 1000);
                 return token;
             }
-        }
+        }**/
     }
 )
