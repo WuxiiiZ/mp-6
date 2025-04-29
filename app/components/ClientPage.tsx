@@ -24,7 +24,9 @@ const StyledDiv = styled.div`
     }
 `
 
-const StyledBold = styled.b`
+const StyledBold = styled.p`
+    font-size: large;
+    font-weight: bold;
     padding: 2vh;
     color:black;
 `;
@@ -35,7 +37,8 @@ const StyledSpan = styled.span`
 
 const StyledButton = styled.button`
     border-radius: 2vh;
-    padding: 3vh;
+    padding: 1vh;
+    margin: 0.5vh;
     background: darkkhaki;
     color:white;
     border: none;
