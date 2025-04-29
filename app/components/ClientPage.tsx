@@ -54,6 +54,8 @@ export default function ClientPage({session}: {session: Session|null}) {
             signOut();
         }
     }, []);
+    console.log("NEXTAUTH_SECRET", process.env.NEXTAUTH_SECRET);
+    console.log("GITHUB_CLIENT_ID", process.env.GITHUB_CLIENT_ID);
     return (
         <>
             <Title />
