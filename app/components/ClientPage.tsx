@@ -25,7 +25,6 @@ const StyledDiv = styled.div`
 `
 
 const StyledBold = styled.p`
-    font-size: large;
     font-weight: bold;
     padding: 2vh;
     color:black;
