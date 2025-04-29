@@ -1,8 +1,9 @@
 "use client"
-import {signIn} from "next-auth/react";
+import {signIn,signOut} from "next-auth/react";
 import {Session} from "next-auth";
 import styled from "styled-components";
 import Title from "./Title";
+import {useEffect} from "react";
 
 const Container = styled.div`
     display: flex;
@@ -48,9 +49,11 @@ const StyledButton = styled.button`
 `;
 
 export default function ClientPage({session}: {session: Session|null}) {
-    const handleSignIn = () => {
-        signIn("github",{prompt:"login"})
-    }
+    useEffect(() => {
+        if(session?.user){
+            signOut();
+        }
+    }, []);
     return (
         <>
             <Title />
@@ -67,8 +70,8 @@ export default function ClientPage({session}: {session: Session|null}) {
                     <div>
                         <StyledBold>OAuth</StyledBold>
                         <p>You have not signed in.</p>
-                        {/* always ask the user to re-authenticate */}
-                        <StyledButton onClick={handleSignIn}>Sign in with Github</StyledButton>
+
+                        <StyledButton onClick={()=>signIn("github")}>Sign in with Github</StyledButton>
                     </div>
                 )
                 }
