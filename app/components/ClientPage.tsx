@@ -29,6 +29,10 @@ const StyledBold = styled.b`
     color:black;
 `;
 
+const StyledSpan = styled.span`
+    text-decoration: underline;
+`;
+
 const StyledButton = styled.button`
     border-radius: 2vh;
     padding: 3vh;
@@ -50,9 +54,9 @@ export default function ClientPage({session}: {session: Session|null}) {
                 {session?.user ?(
                     <div>
                         <b>Success! </b>
-                        <p>Hi, user {session.user.name}</p>
-                        <p>Email: {session.user.email}</p>
-                        <p>You are signed in with Github.</p>
+                        <p>Hi, user <StyledSpan>{session.user.name}</StyledSpan></p>
+                        <p>Email: <StyledSpan>{session.user.email}</StyledSpan></p>
+                        <p>You have signed in with Github.</p>
                     </div>
                 ):(
                     <div>
